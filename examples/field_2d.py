@@ -39,7 +39,12 @@ field = Field(
 
 
 def main(no_show: bool = False) -> None:
-    connect(gauss, field, pointwise_weights=6.0, activation_function=Sigmoid(1))
+    connect(
+        gauss,
+        field,
+        pointwise_weights=6.0,
+        activation_function=Sigmoid(1)
+    )
 
     sim = Simulator()
     sim.simulate_until(2000)
