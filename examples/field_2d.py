@@ -25,4 +25,9 @@ sim = Simulator()
 sim.simulate_until(2000)
 plot = default_snapshot_plot(field)
 plot.draw(sim.get_value(field).numpy())
+# save first so we have an image even in headless environments
+plot.figure.savefig('field_2d.png', dpi=150)
+print('Saved plot to field_2d.png')
+# show blocks when a GUI is available; it will return after the window is closed
 plot.figure.show()
+print('Plot window closed')

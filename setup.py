@@ -6,7 +6,7 @@ is_m1_mac = platform.startswith("mac") and "universal" in platform or platform =
 
 if is_m1_mac:
     install_requires = [
-        'DynamicFieldPy',
+        'DynamicFieldPy @ git+https://github.com/danielsabinasz/DynamicFieldPy.git',
         'tensorflow-macos==2.9.0',
         'matplotlib==3.5.1',
         'numpy==1.22.3',
@@ -16,7 +16,7 @@ if is_m1_mac:
     ]
 elif platform == "macosx-11.1-arm64":
     install_requires = [
-        'DynamicFieldPy',
+        'DynamicFieldPy @ git+https://github.com/danielsabinasz/DynamicFieldPy.git',
         'tensorflow-macos==2.9.0',
         'matplotlib==3.5.1',
         'numpy==1.22.3',
@@ -26,7 +26,7 @@ elif platform == "macosx-11.1-arm64":
     ]
 else:
     install_requires = [
-        'DynamicFieldPy',
+        'DynamicFieldPy @ git+https://github.com/danielsabinasz/DynamicFieldPy.git',
         'tensorflow==2.9.0',
         'matplotlib==3.5.1',
         'numpy==1.22.3',
