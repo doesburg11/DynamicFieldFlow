@@ -2,11 +2,18 @@ from setuptools import setup, find_packages
 import sysconfig
 
 platform = sysconfig.get_platform()
-is_m1_mac = platform.startswith("mac") and "universal" in platform or platform == "macosx-11.1-arm64"
+is_m1_mac = (
+    platform.startswith("mac") and "universal" in platform
+) or (
+    platform == "macosx-11.1-arm64"
+)
 
 if is_m1_mac:
     install_requires = [
-        'DynamicFieldPy @ git+https://github.com/danielsabinasz/DynamicFieldPy.git',
+        (
+            'DynamicFieldPy @ git+https://github.com/'
+            'danielsabinasz/DynamicFieldPy.git'
+        ),
         'tensorflow-macos==2.9.0',
         'matplotlib==3.5.1',
         'numpy==1.22.3',
@@ -16,7 +23,10 @@ if is_m1_mac:
     ]
 elif platform == "macosx-11.1-arm64":
     install_requires = [
-        'DynamicFieldPy @ git+https://github.com/danielsabinasz/DynamicFieldPy.git',
+        (
+            'DynamicFieldPy @ git+https://github.com/'
+            'danielsabinasz/DynamicFieldPy.git'
+        ),
         'tensorflow-macos==2.9.0',
         'matplotlib==3.5.1',
         'numpy==1.22.3',
@@ -26,7 +36,10 @@ elif platform == "macosx-11.1-arm64":
     ]
 else:
     install_requires = [
-        'DynamicFieldPy @ git+https://github.com/danielsabinasz/DynamicFieldPy.git',
+        (
+            'DynamicFieldPy @ git+https://github.com/'
+            'danielsabinasz/DynamicFieldPy.git'
+        ),
         'tensorflow==2.9.0',
         'matplotlib==3.5.1',
         'numpy==1.22.3',
@@ -38,7 +51,10 @@ else:
 
 setup(name='DynamicFieldFlow',
       version='0.1',
-      description='A library for simulating Dynamic Field architectures with TensorFlow',
+      description=(
+          'A library for simulating Dynamic Field architectures '
+          'with TensorFlow'
+      ),
       url='https://github.com/danielsabinasz/DynamicFieldFlow',
       author='Daniel Sabinasz',
       author_email='daniel@sabinasz.net',
